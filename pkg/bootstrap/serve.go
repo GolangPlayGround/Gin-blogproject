@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"Gin-blogproject/pkg/config"
+	"Gin-blogproject/pkg/database"
 	"Gin-blogproject/pkg/html"
 	"Gin-blogproject/pkg/routing"
 	"Gin-blogproject/pkg/static"
@@ -9,6 +10,8 @@ import (
 
 func Serve() {
 	config.Set()
+
+	database.Connect()
 
 	routing.Init()
 
